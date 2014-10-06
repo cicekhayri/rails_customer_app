@@ -1,8 +1,25 @@
-<h1>hello world</h1>
-<ul>
-<%- @trains.each do |train| %>
-  <li><%= train.name %></li>
+<%= content_for :header do %>
+  <h1>Book Train</h1>
 <% end %>
-</ul>
+<% content_for :section do %>
+<%= link_to "Add new destination", new_train_path %>
+<br/><br/>
+<table>
+  <tr>
+    <th>From</th>
+    <th><%= link_to "To", sorted: "destination" %></th>
+    <th><%= link_to "Date", sorted: "date_of_travel" %></th>
+    <th>Customers</th>
+  </tr>
+  <%- @trains.each do |train| %>
+  <tr>
+    <td><%= link_to train.from, train_path(train) %></td>
+    <td><%= train.destination %></td>
+    <td><%= train.date_of_travel %></td>
+    <td><%= train.customers.count %></td>
+    <td><%= link_to "Edit", edit_train_path(train) %> | <%= link_to "Delete", train_path(train), method: :delete, data: {confirm: "Are you sure?" } %></td>
+  </tr>
 
-<%- @trains.inspect %>
+<% end %>
+</table>
+<% end %>

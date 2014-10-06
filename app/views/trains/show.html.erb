@@ -1,0 +1,20 @@
+<% content_for :header do %>
+  <h1>Train: <%= @train.id %></h1>
+<% end %>
+
+<% content_for :section do %>
+  from: <%= @train.from %><br/>
+  to: <%= @train.destination %><br/>
+  date: <%= @train.date_of_travel %>
+<br/><br/>
+Customers on the train:
+<ul>
+<% @train.customers.each do |customer| %>
+  <li><%= customer.name %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% content_for :footer do %>
+  <%= link_to "Go back", trains_path %>
+<% end %>

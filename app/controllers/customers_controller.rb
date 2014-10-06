@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
   end
 
   def update
-    @customer = customer_id
+    @customer = find_customer
 
     if @customer.update_attributes(customer_params)
       redirect_to customers_path
@@ -45,7 +45,7 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:name, :link)
+    params.require(:customer).permit(:name, :link, :train_id)
   end
 
   def find_customer

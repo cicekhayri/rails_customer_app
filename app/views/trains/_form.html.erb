@@ -1,0 +1,22 @@
+<% content_for :section do %>
+
+<% if @train.errors.any? %>
+  <%= @train.errors.full_messages.to_sentence %>
+<% end %>
+
+<%= form_for @train do |f| %>
+  <%= f.label :from %>
+  <%= f.text_field :from %>
+  <br/>
+  <%= f.label :destination %>
+  <%= f.text_field :destination %>
+  <br/>
+  <%= f.label :date_of_travel %>
+  <%= f.date_field :date_of_travel %>
+  <br/> 
+  <%= f.submit %>
+<% end %>
+<% end %>
+<% content_for :footer do %>
+  <%= link_to "Go back", trains_path %>
+<% end %>

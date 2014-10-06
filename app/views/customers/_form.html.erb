@@ -1,7 +1,9 @@
 <% content_for :section do %>
 <% if @customer.errors.any? %>
-  <%= @customer.errors.full_messages.to_sentence %>
-  <br/>
+  <% @customer.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+
 <% end %>
 
 <br/>
@@ -12,6 +14,9 @@
   <br/>
   <%= f.label :link %>
   <%= f.text_field :link %>
+    <br/>
+  <%= f.select :train_id, options_for_select(Train.all.collect {|u| [ u.from, u.id ] }) %>
+  <br/>
   <br/><br/>
   <%= f.submit class: "button" %>
 
