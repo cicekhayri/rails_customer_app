@@ -17,11 +17,12 @@ class TrainsController < ApplicationController
   end
 
   def from
-    @train = Train.where(travel_from: params[:origin])
+    #@train = Train.where(travel_from: params[:origin]).where(destination: params[:origin])
+    @train = Train.where(['travel_from LIKE ? OR destination LIKE ?', "%#{params[:origin]}%","%#{params[:origin]}%"])
   end
 
   def to
-    @train = Train.where(destination: params[:origin])
+    from
   end
 
   def create
