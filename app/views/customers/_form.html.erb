@@ -1,6 +1,6 @@
 <% content_for :section do %>
   <% if @customer.errors.any? %>
-    <ul>
+    <ul class="errors">
     <% @customer.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>

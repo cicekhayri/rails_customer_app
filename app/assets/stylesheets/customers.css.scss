@@ -6,7 +6,7 @@ $background-color: #fff;
 $link_color: #333;
 $hover_color: #09f;
 $font: Georgia, Arial, Verdana;
-$header_background: #a8a8a8;
+$header_background: #FFDEAD;
 
 body {
   font-family: $font;
@@ -21,8 +21,12 @@ header {
   background-color: $header_background;
 }
 
+.errors {
+  color: red;
+}
+
 section {
-  background-color: #eee;
+  background-color: #FFEFD5;
   width: 99%;
   padding: 10px;
 }
@@ -33,18 +37,18 @@ section {
 
 footer {
   width: 99%;
-  background-color: #333;
-  color: #fff;
+  background-color: #FFDEAD;
+  color: #333;
   padding: 10px;
 }
 
 footer a {
-  color: #fff;
+  color: #333;
 }
 
 .button {
   padding:5px;
-  background-color: #09f;
+  background-color: #E6E6FA;
   border: 1px solid #666;
   color:#000;
   text-decoration:none;
