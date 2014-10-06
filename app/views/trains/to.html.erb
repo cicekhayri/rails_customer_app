@@ -2,6 +2,7 @@
   <h1>Trains</h1>
 <% end %>
 <% content_for :section do %>
+  Trains to:
   <ul>
     <% @train.each do |train| %>
       <li>From: <%= train.from %> To: <%= train.destination %></li>
