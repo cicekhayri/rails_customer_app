@@ -2,7 +2,12 @@
   <h1>Welcome: <span class="cust_name"><%= @customer.name %></span></h1>
 <% end %>
 <% content_for :section do %>
-<a href="<%= @customer.link %>"><%= @customer.link %></a>
+  <a href="<%= @customer.link %>"><%= @customer.link %></a>
+  <br/><br/>Hello <%= @customer.name %> you have booked the train:<br/><br/>
+  From: <%= @customer.train.from %> <br/>
+  To: <%= @customer.train.destination %><br/>
+  Date: <%= @customer.train.date_of_travel %>
+
 <% end %>
 <% content_for :footer do %>
 <%= link_to "Go back", customers_path %>

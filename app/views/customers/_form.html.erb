@@ -1,9 +1,10 @@
 <% content_for :section do %>
-<% if @customer.errors.any? %>
-  <% @customer.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-
+  <% if @customer.errors.any? %>
+    <ul>
+    <% @customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
 <% end %>
 
 <br/>
@@ -14,7 +15,8 @@
   <br/>
   <%= f.label :link %>
   <%= f.text_field :link %>
-    <br/>
+  <br/>
+  <label>Where do you want to travel</label><br/>
   <%= f.select :train_id, options_for_select(Train.all.collect {|u| [ u.from, u.id ] }) %>
   <br/>
   <br/><br/>

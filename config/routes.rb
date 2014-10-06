@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :trains
   resources :customers
-
+  
+  get 'trains/from/:origin' => 'trains#from'
+  get 'trains/to/:origin' => 'trains#to'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

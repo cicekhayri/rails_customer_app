@@ -1,8 +1,13 @@
 <% content_for :section do %>
 
 <% if @train.errors.any? %>
-  <%= @train.errors.full_messages.to_sentence %>
+  <ul>
+  <% @train.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
 <% end %>
+
 
 <%= form_for @train do |f| %>
   <%= f.label :from %>
