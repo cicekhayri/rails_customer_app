@@ -5,7 +5,7 @@
   Trains to:
   <ul>
     <% @train.each do |train| %>
-      <li>From: <%= train.from %> To: <%= train.destination %></li>
+      <li>From: <%= train.travel_from %> To: <%= train.destination %></li>
   <% end %>
   </ul>
 <% end %>

@@ -8,14 +8,14 @@
   <tr>
     <th>Train Nr</th>
     <th>From</th>
-    <th><%= link_to "To", sorted: "destination" %></th>
-    <th><%= link_to "Date", sorted: "date_of_travel" %></th>
+    <th>To</th>
+    <th>Date</th>
     <th>Customers</th>
   </tr>
   <%- @trains.each do |train| %>
   <tr>
     <td><%= link_to train.id, train_path(train) %></td>
-    <td><%= link_to train.from, train_path(train) %></td>
+    <td><%= link_to train.travel_from, train_path(train) %></td>
     <td><%= train.destination %></td>
     <td><%= train.date_of_travel %></td>
     <td><%= train.customers.count %></td>

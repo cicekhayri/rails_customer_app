@@ -2,7 +2,8 @@ class TrainsController < ApplicationController
   before_filter :find_train, only: [:edit, :show, :destroy]
 
   def index
-    @trains = Train.order(params[:sorted])
+    #@trains = Train.order(params[:sorted])
+    @trains = Train.search(params[:search]) 
   end
 
   def new
@@ -50,7 +51,7 @@ class TrainsController < ApplicationController
 
   private
   def train_params
-    params.require(:train).permit(:from, :date_of_travel, :destination)
+    params.require(:train).permit(:travel_from, :date_of_travel, :destination)
   end
 
   def find_train
