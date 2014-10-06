@@ -3,8 +3,8 @@
 <% end %>
 
 <% content_for :section do %>
-  from: <%= @train.from %><br/>
-  to: <%= @train.destination %><br/>
+  from: <a href="/trains/from/<%= @train.from %>"><%= @train.from %></a><br/>
+  to: <a href="/trains/to/<%= @train.destination %>"><%= @train.destination %></a><br/>
   date: <%= @train.date_of_travel %>
 <br/><br/>
 Customers on the train:
@@ -18,3 +18,4 @@ Customers on the train:
 <% content_for :footer do %>
   <%= link_to "Go back", trains_path %>
 <% end %>
+

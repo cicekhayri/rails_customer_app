@@ -15,6 +15,14 @@ class TrainsController < ApplicationController
   def show
   end
 
+  def from
+    @train = Train.where(from: params[:origin])
+  end
+
+  def to
+    @train = Train.where(destination: params[:origin])
+  end
+
   def create
     @train = Train.new(train_params)
 
