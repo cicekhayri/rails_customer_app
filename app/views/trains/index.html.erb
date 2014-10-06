@@ -12,11 +12,11 @@
     <th>Date</th>
     <th>Customers</th>
   </tr>
-  <%- @trains.each do |train| %>
+  <% @trains.each do |train| %>
   <tr>
     <td><%= link_to train.id, train_path(train) %></td>
-    <td><%= link_to train.travel_from, train_path(train) %></td>
-    <td><%= train.destination %></td>
+    <td><a href="/trains/from/<%= train.travel_from %>"><%= train.travel_from %></a></td>
+    <td><a href="/trains/to/<%= train.destination %>"><%= train.destination %></a></td>
     <td><%= train.date_of_travel %></td>
     <td><%= train.customers.count %></td>
     <td><%= link_to "Edit", edit_train_path(train) %> | <%= link_to "Delete", train_path(train), method: :delete, data: {confirm: "Are you sure?" } %></td>

@@ -2,7 +2,7 @@ class TrainsController < ApplicationController
   before_filter :find_train, only: [:edit, :show, :destroy]
 
   def index
-    #@trains = Train.order(params[:sorted])
+    #
     @trains = Train.search(params[:search]) 
   end
 
@@ -17,7 +17,7 @@ class TrainsController < ApplicationController
   end
 
   def from
-    @train = Train.where(from: params[:origin])
+    @train = Train.where(travel_from: params[:origin])
   end
 
   def to
