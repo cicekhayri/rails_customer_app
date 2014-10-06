@@ -11,6 +11,9 @@
   <%= yield :header %>
 </header>
 <section>
+  <%= link_to "Trains", trains_path %>
+  | <%= link_to 'Customers', customers_path %> 
+<br/><br/>
   <%= yield :section %>
 </section>
 <footer>
