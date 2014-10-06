@@ -4,6 +4,7 @@ class CustomersController < ApplicationController
 
   def index
     @customers = Customer.order(params[:sorting])
+    @customers.destroy_all(['created_at < ?', 1.hour.ago])
   end
 
   def new

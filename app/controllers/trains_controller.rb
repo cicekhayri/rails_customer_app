@@ -2,8 +2,8 @@ class TrainsController < ApplicationController
   before_filter :find_train, only: [:edit, :show, :destroy]
 
   def index
-    #
     @trains = Train.search(params[:search]) 
+    @trains.destroy_all(['created_at < ?', 1.hour.ago])
   end
 
   def new
@@ -17,7 +17,6 @@ class TrainsController < ApplicationController
   end
 
   def from
-    #@train = Train.where(travel_from: params[:origin]).where(destination: params[:origin])
     @train = Train.where(['travel_from LIKE ? OR destination LIKE ?', "%#{params[:origin]}%","%#{params[:origin]}%"])
   end
 

@@ -6,5 +6,6 @@ Customer app in Rails
 - Edit customer
 - Delete customer
 - Sort by name, link, and newest
+- Database will be erased after 1 hour
 
 
