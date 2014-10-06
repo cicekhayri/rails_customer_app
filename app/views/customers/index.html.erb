@@ -1,0 +1,25 @@
+<% content_for :header do %>
+  <h1>Customer</h1>
+<% end %>
+<% content_for :section do %>
+
+<%= link_to 'Add new customer', new_customer_path %> 
+<br/>
+<br/>
+<table>
+  <tr>
+    <th><%= link_to "Name", sorting: "name" %></th>
+    <th><%= link_to "Link", sorting: "link" %></th>
+    <th><%= link_to "Newset Customer", sorting: "created_at DESC" %></th>
+    <th>&nbsp;</th>
+  </tr>
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= link_to customer.name, customer_path(customer) %></td>
+    <td><%= customer.link %></td>
+    <td><%= customer.created_at.strftime("%d %b") %> | <%= link_to 'Edit', edit_customer_path(customer) %>
+  | <%= link_to 'Delete', customer_path(customer), method: :delete, data: {confirm: "Hmmm are you sure to delete #{customer.name}" } %>
+</td></tr>
+<% end %>
+</table>
+<% end %>

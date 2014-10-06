@@ -1,0 +1,23 @@
+<% content_for :section do %>
+<% if @customer.errors.any? %>
+  <%= @customer.errors.full_messages.to_sentence %>
+  <br/>
+<% end %>
+
+<br/>
+
+<%= form_for @customer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <br/><br/>
+  <%= f.submit class: "button" %>
+
+<%- end %>
+<% end %>
+<% content_for :footer do %>
+  <%= link_to "Go back", customers_path %>
+<% end %>
+

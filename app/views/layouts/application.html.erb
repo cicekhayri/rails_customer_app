@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iron</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <%= yield :header %>
+</header>
+<section>
+  <%= yield :section %>
+</section>
+<footer>
+  <% if content_for?(:footer) %>
+    <%= yield :footer %>
+  <% else %>
+    <p>Customer</p>
+  <% end %>
+</footer>
+
+
+</body>
+</html>

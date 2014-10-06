@@ -1,0 +1,8 @@
+<h1>hello world</h1>
+<ul>
+<%- @trains.each do |train| %>
+  <li><%= train.name %></li>
+<% end %>
+</ul>
+
+<%- @trains.inspect %>

@@ -1,0 +1,72 @@
+// Place all the styles related to the customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background-color: #fff;
+$link_color: #333;
+$hover_color: #09f;
+$font: Georgia, Arial, Verdana;
+$header_background: #a8a8a8;
+
+body {
+  font-family: $font;
+  width: 800px;
+  margin: 10px auto;
+  background-color: $background-color;
+}
+
+header {
+  width: 99%;
+  padding: 10px;
+  background-color: $header_background;
+}
+
+section {
+  background-color: #eee;
+  width: 99%;
+  padding: 10px;
+}
+
+.cust_name {
+  color: #093685;
+}
+
+footer {
+  width: 99%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+footer a {
+  color: #fff;
+}
+
+.button {
+  padding:5px;
+  background-color: #09f;
+  border: 1px solid #666;
+  color:#000;
+  text-decoration:none;
+}
+
+input[type=text] {
+  border: 1px solid #333;
+  color: #1F7CFF;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+a {
+  color: $link_color;
+}
+
+a:hover {
+  color: $hover_color;
+}
